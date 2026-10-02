@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Amitai Kurtz Samba Project</title>
+<meta name="description" content="Beethoven, Mozart, Chopin and Tchaikovsky, played as samba. The new album But He Was Born in BRAZIL by Amitai Kurtz Samba Project, out now.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Amitai Kurtz Samba Project · But He Was Born in BRAZIL">
+<meta property="og:description" content="Beethoven, Mozart, Chopin and Tchaikovsky, played as samba. The album is out now.">
+<meta property="og:image" content="/media/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0c1f17">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230c1f17'/%3E%3Ccircle cx='17' cy='32' r='5' fill='%23f3c13a'/%3E%3Ccircle cx='29' cy='32' r='5' fill='%23f3c13a'/%3E%3Ccircle cx='41' cy='32' r='5' fill='%23f3c13a'/%3E%3Crect x='47' y='27' width='10' height='10' rx='5' fill='%23e0442f'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a concert programme played in a backyard jungle. Full-bleed footage, Bodoni for the classical canon, a poster grotesk for Brazil. */
+:root{
+  --jungle:#0c1f17;
+  --leaf:#14342a;
+  --paper:#f1e9d2;
+  --paper-2:#e6dcbf;
+  --ink:#13241c;
+  --sun:#f3c13a;
+  --nord:#e0442f;
+  --cream:#f6f0df;
+  --mist:rgba(246,240,223,.68);
+  --hair:rgba(246,240,223,.18);
+  --ink-mist:rgba(19,36,28,.62);
+  --ink-hair:rgba(19,36,28,.2);
+
+  --f-display:"Big Shoulders Display","Arial Narrow","Helvetica Neue",sans-serif;
+  --f-serif:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
+  --f-body:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+
+  --gutter:clamp(18px,4vw,56px);
+  --max:1320px;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--jungle);color:var(--cream);font-family:var(--f-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--sun);outline-offset:3px}
+.wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--sun)}
+h1,h2,h3{margin:0;text-wrap:balance;font-weight:400}
+
+/* ---------- NAV ---------- */
+.nav{position:fixed;inset:0 0 auto 0;z-index:30;padding-top:env(safe-area-inset-top,0px);transition:background .35s ease,backdrop-filter .35s ease}
+.nav.scrolled{background:rgba(12,31,23,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:16px}
+.mark{display:flex;align-items:center;gap:12px;text-decoration:none}
+.beat{display:inline-flex;align-items:center;gap:4px}
+.beat i{display:block;width:7px;height:7px;border-radius:50%;background:var(--sun)}
+.beat i:last-child{width:16px;border-radius:4px;background:var(--nord)}
+.mark b{font-family:var(--f-display);font-weight:900;font-size:19px;letter-spacing:.06em;text-transform:uppercase;line-height:1}
+.mark b span{color:var(--mist);font-weight:700}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;font-size:14px;letter-spacing:.04em;color:var(--mist);transition:color .2s}
+.nav ul a:hover{color:var(--cream)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-body);font-weight:600;font-size:15px;letter-spacing:.02em;text-decoration:none;border-radius:999px;padding:12px 22px;border:1px solid transparent;cursor:pointer;transition:transform .2s ease,background .2s ease,color .2s ease,border-color .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn-sun{background:var(--sun);color:var(--ink)}
+.btn-sun:hover{background:#ffd254}
+.btn-line{border-color:rgba(246,240,223,.45);color:var(--cream);background:transparent}
+.btn-line:hover{border-color:var(--cream);background:rgba(246,240,223,.08)}
+.btn-ink{background:var(--ink);color:var(--paper)}
+.nav .btn{padding:9px 18px;font-size:14px}
+@media (max-width:860px){.nav ul{display:none}}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;min-height:min(100svh,980px);display:flex;align-items:flex-end;overflow:hidden;isolation:isolate}
+.hero video,.hero .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:
+  linear-gradient(180deg,rgba(12,31,23,.55) 0%,rgba(12,31,23,0) 22%,rgba(12,31,23,.1) 38%,rgba(12,31,23,.8) 72%,var(--jungle) 100%),
+  linear-gradient(90deg,rgba(12,31,23,.55) 0%,rgba(12,31,23,0) 60%)}
+.hero .eyebrow{color:var(--cream);text-shadow:0 1px 12px rgba(0,0,0,.5)}
+.hero .it{text-shadow:0 2px 24px rgba(0,0,0,.35)}
+.hero .wrap{padding-block:140px 72px}
+.lockup{display:grid;gap:6px}
+.lockup .it{font-family:var(--f-serif);font-style:italic;font-weight:400;font-size:clamp(28px,4.6vw,64px);line-height:1.02;letter-spacing:-.01em;color:var(--cream)}
+.lockup .big{font-family:var(--f-display);font-weight:900;font-size:clamp(108px,23vw,330px);line-height:.8;letter-spacing:-.01em;color:var(--sun);text-transform:uppercase;margin-left:-.03em}
+.hero-foot{margin-top:34px;display:flex;flex-wrap:wrap;gap:28px 48px;align-items:flex-end;justify-content:space-between}
+.hero-foot p{margin:0;max-width:44ch;color:var(--mist);font-size:17px}
+.hero-foot p strong{color:var(--cream);font-weight:600}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+
+.load .lockup>*,.load .hero-foot{opacity:1;transform:none}
+@media (prefers-reduced-motion:no-preference){
+  .js .lockup>*,.js .hero-foot{opacity:0;transform:translateY(22px)}
+  .js.load .lockup>*,.js.load .hero-foot{opacity:1;transform:none;transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+  .js.load .lockup>*:nth-child(2){transition-delay:.12s}
+  .js.load .lockup>*:nth-child(3){transition-delay:.26s}
+  .js.load .hero-foot{transition-delay:.5s}
+}
+
+/* ---------- THESIS ---------- */
+.thesis{padding-block:clamp(90px,12vw,170px)}
+.thesis .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.2fr);gap:clamp(32px,6vw,96px);align-items:start}
+.motif{position:sticky;top:110px}
+.motif .notes{display:flex;align-items:center;gap:clamp(10px,1.6vw,18px);height:72px}
+.motif .notes i{display:block;width:clamp(18px,2.4vw,28px);aspect-ratio:1;border-radius:50%;background:var(--sun)}
+.motif .notes i.long{width:clamp(64px,9vw,112px);aspect-ratio:auto;height:clamp(18px,2.4vw,28px);border-radius:99px;background:var(--nord)}
+@media (prefers-reduced-motion:no-preference){
+  .motif .notes i{animation:hit 1.6s infinite cubic-bezier(.3,.1,.2,1)}
+  .motif .notes i:nth-child(2){animation-delay:.18s}
+  .motif .notes i:nth-child(3){animation-delay:.36s}
+  .motif .notes i:nth-child(4){animation-delay:.6s}
+  @keyframes hit{0%,100%{transform:translateY(0)}8%{transform:translateY(-10px)}20%{transform:translateY(0)}}
+}
+.motif figcaption{margin-top:16px;font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;color:var(--mist);line-height:1.7}
+.thesis .lead{font-family:var(--f-serif);font-size:clamp(28px,3.5vw,50px);line-height:1.16;letter-spacing:-.012em;margin:0}
+.thesis .lead em{color:var(--sun)}
+.thesis .body{margin-top:clamp(28px,4vw,48px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 48px;color:var(--mist);font-size:17px}
+.thesis .body p{margin:0;max-width:60ch}
+.reach{margin-top:clamp(48px,6vw,80px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--hair)}
+.reach div{padding:22px 24px 0 0}
+.reach div+div{padding-left:24px;border-left:1px solid var(--hair)}
+.reach b{display:block;font-family:var(--f-display);font-weight:900;font-size:clamp(34px,4.4vw,58px);line-height:1;color:var(--cream);letter-spacing:.005em;text-transform:uppercase}
+.reach span{display:block;margin-top:8px;font-size:14px;color:var(--mist)}
+@media (max-width:820px){
+  .thesis .grid{grid-template-columns:1fr}
+  .motif{position:static}
+  .thesis .body{grid-template-columns:1fr}
+  .reach{grid-template-columns:1fr}
+  .reach div,.reach div+div{padding:18px 0;border-left:0;border-bottom:1px solid var(--hair)}
+}
+
+/* ---------- ALBUM / PROGRAMME ---------- */
+.album{background:var(--paper);color:var(--ink);padding-block:clamp(80px,10vw,150px);position:relative}
+.album::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;background-image:radial-gradient(rgba(19,36,28,.06) 1px,transparent 1px);background-size:4px 4px}
+.album .wrap{position:relative}
+.album .eyebrow{color:var(--nord)}
+.album-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:clamp(32px,6vw,96px);align-items:end;margin-bottom:clamp(48px,6vw,80px)}
+.album-head h2{font-family:var(--f-serif);font-size:clamp(44px,6.6vw,96px);line-height:.98;letter-spacing:-.02em;margin-top:14px}
+.album-head h2 i{font-style:italic}
+.album-head h2 span{display:block;font-family:var(--f-display);font-weight:900;font-size:1.22em;letter-spacing:0;text-transform:uppercase;line-height:.86;color:var(--leaf)}
+.album-head p{margin:0;max-width:52ch;color:var(--ink-mist)}
+.album-body{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:clamp(32px,6vw,96px);align-items:start}
+.sleeve{position:sticky;top:100px}
+.sleeve .cover{position:relative;border-radius:4px;overflow:hidden;box-shadow:0 30px 60px -28px rgba(19,36,28,.55),0 2px 0 rgba(19,36,28,.08)}
+.sleeve .cover img{width:100%;aspect-ratio:1;object-fit:cover}
+.meta{margin-top:22px;display:grid;grid-template-columns:auto 1fr;gap:6px 18px;font-size:14px}
+.meta dt{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mist);padding-top:3px}
+.meta dd{margin:0}
+.listen{margin-top:26px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.listen a{display:flex;justify-content:space-between;align-items:center;gap:10px;text-decoration:none;font-size:14px;font-weight:600;padding:12px 14px;border:1px solid var(--ink-hair);border-radius:6px;transition:background .2s,border-color .2s,color .2s}
+.listen a:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.listen a span{font-family:var(--f-mono);font-weight:400;font-size:12px;opacity:.6}
+.listen a.primary{grid-column:1/-1;background:var(--ink);color:var(--paper);border-color:var(--ink);padding:15px 16px;font-size:15px}
+.listen a.primary:hover{background:var(--leaf)}
+
+.programme{border-top:2px solid var(--ink)}
+.programme-title{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:14px 0;border-bottom:1px solid var(--ink-hair);font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mist)}
+.programme ol{list-style:none;margin:0;padding:0;counter-reset:t}
+.programme li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:0 14px;padding:22px 0;border-bottom:1px solid var(--ink-hair)}
+.programme .no{font-family:var(--f-display);font-weight:900;font-size:30px;line-height:1;color:var(--nord);padding-top:2px}
+.programme .composer{font-family:var(--f-body);font-weight:600;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+.programme .work{display:flex;align-items:baseline;gap:10px;margin-top:4px}
+.programme .work em{font-family:var(--f-serif);font-size:clamp(22px,2.4vw,30px);line-height:1.15;letter-spacing:-.01em}
+.programme .work .lead{flex:1;min-width:20px;border-bottom:1.5px dotted rgba(19,36,28,.35);transform:translateY(-6px)}
+.programme .work .cat{font-family:var(--f-mono);font-size:12px;color:var(--ink-mist);white-space:nowrap}
+.programme .note{margin:8px 0 0;font-size:15px;color:var(--ink-mist);max-width:58ch}
+.programme li.interlude .work em{font-size:clamp(19px,2vw,24px)}
+.credits{margin-top:28px;font-size:14px;color:var(--ink-mist);max-width:60ch}
+.credits strong{color:var(--ink);font-weight:600}
+@media (max-width:900px){
+  .album-head,.album-body{grid-template-columns:1fr}
+  .sleeve{position:static;max-width:520px}
+}
+@media (max-width:480px){
+  .programme .work{flex-wrap:wrap}
+  .programme .work .lead{display:none}
+  .programme .work .cat{width:100%}
+  .listen{grid-template-columns:1fr}
+}
+
+/* ---------- SESSIONS ---------- */
+.sessions{padding-block:clamp(90px,11vw,160px)}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:20px 48px;margin-bottom:clamp(36px,5vw,64px)}
+.sec-head h2{font-family:var(--f-serif);font-size:clamp(40px,5.6vw,80px);line-height:1;letter-spacing:-.02em;margin-top:14px}
+.sec-head h2 i{color:var(--sun)}
+.sec-head p{margin:0;max-width:46ch;color:var(--mist)}
+.reels{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.feature{grid-column:1/-1;margin-bottom:6px}
+.clip{position:relative;border-radius:10px;overflow:hidden;background:var(--leaf);cursor:pointer;isolation:isolate}
+.clip video{width:100%;height:100%;object-fit:cover;aspect-ratio:9/16}
+.feature .clip video{aspect-ratio:16/9;transform:scale(1.025)}
+.clip::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,31,23,0) 55%,rgba(12,31,23,.85) 100%);pointer-events:none;transition:opacity .3s}
+.clip.playing::after{opacity:0}
+.clip .cap{position:absolute;left:16px;right:16px;bottom:14px;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;gap:10px;pointer-events:none;transition:opacity .3s}
+.clip.playing .cap{opacity:0}
+.clip .cap b{display:block;font-family:var(--f-display);font-weight:900;font-size:24px;line-height:1;text-transform:uppercase;letter-spacing:.02em}
+.clip .cap small{display:block;font-family:var(--f-serif);font-style:italic;font-size:15px;color:var(--mist);margin-top:4px}
+.feature .clip .cap b{font-size:clamp(28px,3.4vw,44px)}
+.play{flex:none;width:44px;height:44px;border-radius:50%;background:var(--sun);display:grid;place-items:center;transition:transform .25s}
+.play svg{width:14px;height:14px;margin-left:2px;fill:var(--ink)}
+.clip:hover .play{transform:scale(1.08)}
+.feature .play{width:60px;height:60px}
+.feature .play svg{width:18px;height:18px}
+.follow{margin-top:36px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.follow span{color:var(--mist);font-size:15px;margin-right:6px}
+@media (max-width:1000px){.reels{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:620px){
+  .reels{display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(-1*var(--gutter));padding-inline:var(--gutter);scroll-padding-inline:var(--gutter);scrollbar-width:none}
+  .reels::-webkit-scrollbar{display:none}
+  .reels .feature{display:none}
+  .reels>.clip{flex:0 0 68%;scroll-snap-align:start}
+  .clip .cap b{font-size:21px}
+}
+.mobile-feature{display:none}
+@media (max-width:620px){.mobile-feature{display:block;margin-bottom:12px}}
+
+/* ---------- ARTIST ---------- */
+.artist{background:var(--leaf);padding-block:clamp(90px,11vw,160px);overflow:hidden}
+.artist .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(36px,6vw,96px);align-items:center}
+.portrait{position:relative}
+.portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:4px}
+.portrait figcaption{position:absolute;left:-1px;bottom:24px;background:var(--sun);color:var(--ink);font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:8px 12px}
+.artist h2{font-family:var(--f-serif);font-size:clamp(40px,5.4vw,76px);line-height:1;letter-spacing:-.02em;margin-top:14px}
+.artist h2 i{color:var(--sun)}
+.artist .bio{margin-top:28px;display:grid;gap:18px;color:var(--mist);max-width:58ch}
+.artist .bio p{margin:0}
+.artist .bio strong{color:var(--cream);font-weight:600}
+.roles{margin-top:30px;display:flex;flex-wrap:wrap;gap:8px}
+.roles span{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;padding:6px 12px;border:1px solid var(--hair);border-radius:99px;color:var(--cream)}
+.played{margin-top:30px;padding-top:22px;border-top:1px solid var(--hair);font-size:14px;color:var(--mist)}
+.played b{display:block;font-family:var(--f-mono);font-weight:400;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--sun);margin-bottom:8px}
+@media (max-width:860px){.artist .grid{grid-template-columns:1fr}.portrait{max-width:520px}}
+
+/* ---------- LIVE / BOOKING ---------- */
+.live{padding-block:clamp(90px,11vw,160px)}
+.live .grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(36px,6vw,96px);align-items:start}
+.live h2{font-family:var(--f-display);font-weight:900;text-transform:uppercase;font-size:clamp(64px,10vw,150px);line-height:.84;letter-spacing:-.005em;margin-top:16px}
+.live h2 i{display:block;font-family:var(--f-serif);font-style:italic;font-weight:400;text-transform:none;font-size:.36em;line-height:1.1;letter-spacing:-.01em;color:var(--sun);margin-top:10px}
+.live .intro{margin-top:28px;color:var(--mist);max-width:54ch}
+.facts{margin-top:36px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--hair)}
+.facts div{padding:18px 18px 0 0}
+.facts div+div{padding-left:18px;border-left:1px solid var(--hair)}
+.facts b{display:block;font-family:var(--f-display);font-weight:900;font-size:34px;line-height:1;text-transform:uppercase}
+.facts span{display:block;margin-top:6px;font-size:13px;color:var(--mist)}
+.rep{margin-top:32px;font-size:15px;color:var(--mist)}
+.rep b{display:block;font-family:var(--f-mono);font-weight:400;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--sun);margin-bottom:8px}
+
+.book{background:var(--paper);color:var(--ink);border-radius:8px;padding:clamp(24px,3.4vw,40px)}
+.book h3{font-family:var(--f-serif);font-size:clamp(28px,2.8vw,36px);line-height:1.1;letter-spacing:-.01em}
+.book>p{margin:10px 0 24px;color:var(--ink-mist);font-size:15px}
+.book form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.field{display:grid;gap:6px;min-width:0}
+.field.full{grid-column:1/-1}
+.field label{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mist)}
+.field input,.field select,.field textarea{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--cream);border:1px solid var(--ink-hair);border-radius:6px;padding:12px 13px;color-scheme:light}
+.field textarea{min-height:110px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:2px solid var(--leaf);outline-offset:0;border-color:var(--leaf)}
+.book .send{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:6px}
+.book .btn-ink{padding:14px 24px}
+.status{font-size:14px;color:var(--leaf);min-height:1.4em}
+.direct{margin-top:26px;padding-top:20px;border-top:1px solid var(--ink-hair);display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;justify-content:space-between;font-size:14px}
+.direct span{color:var(--ink-mist)}
+.direct a{font-family:var(--f-mono);font-size:15px;text-decoration:none;border-bottom:1px solid var(--ink-hair)}
+.copy{font:inherit;font-size:13px;font-weight:600;background:transparent;border:1px solid var(--ink-hair);border-radius:99px;padding:6px 12px;cursor:pointer;color:var(--ink)}
+.copy:hover{background:var(--ink);color:var(--paper)}
+@media (max-width:900px){.live .grid{grid-template-columns:1fr}}
+@media (max-width:520px){.book form{grid-template-columns:1fr}.facts{grid-template-columns:1fr}.facts div,.facts div+div{padding:14px 0;border-left:0;border-bottom:1px solid var(--hair)}}
+
+/* ---------- FOOTER ---------- */
+footer{border-top:1px solid var(--hair);padding-block:40px calc(40px + env(safe-area-inset-bottom,0px))}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px}
+footer nav{display:flex;flex-wrap:wrap;gap:22px}
+footer nav a{text-decoration:none;font-size:14px;color:var(--mist)}
+footer nav a:hover{color:var(--cream)}
+footer small{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;color:var(--mist)}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="Amitai Kurtz Samba Project, back to top">
+      <span class="beat" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <b>Amitai Kurtz <span>Samba Project</span></b>
+    </a>
+    <ul>
+      <li><a href="#album">Album</a></li>
+      <li><a href="#sessions">Sessions</a></li>
+      <li><a href="#amitai">Amitai</a></li>
+      <li><a href="#live">Live &amp; Booking</a></li>
+    </ul>
+    <a class="btn btn-sun" href="https://amitaikurtz.lnk.to/sambaproject" target="_blank" rel="noopener">Listen</a>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero" aria-label="But He Was Born in BRAZIL">
+  <img class="poster" src="/media/hero.jpg" alt="">
+  <video id="heroVideo" autoplay muted loop playsinline preload="auto" poster="/media/hero.jpg" aria-hidden="true">
+    <source src="/media/hero-loop.mp4" type="video/mp4">
+  </video>
+  <div class="wrap">
+    <h1 class="lockup">
+      <span class="eyebrow">Amitai Kurtz Samba Project · The album</span>
+      <span class="it">Beethoven, Mozart, Chopin.<br>But he was born in</span>
+      <span class="big">Brazil</span>
+    </h1>
+    <div class="hero-foot">
+      <p><strong>Out now on every platform.</strong> Eight pieces of the classical canon, arranged, produced and orchestrated by Amitai Kurtz, played as samba and bossa nova.</p>
+      <div class="cta-row">
+        <a class="btn btn-sun" href="https://amitaikurtz.lnk.to/sambaproject" target="_blank" rel="noopener">Listen to the album</a>
+        <a class="btn btn-line" href="#sessions">Watch the sessions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="thesis" aria-labelledby="thesis-h">
+  <div class="wrap grid">
+    <figure class="motif" aria-hidden="false">
+      <div class="notes" role="img" aria-label="The opening motif of Beethoven's Fifth: three short notes and one long note"><i></i><i></i><i></i><i class="long"></i></div>
+      <figcaption>Beethoven · Symphony No. 5 in C minor<br>Op. 67 · bars 1–2 · short, short, short, long</figcaption>
+    </figure>
+    <div>
+      <h2 id="thesis-h" class="lead">Beethoven's Fifth opens with a rhythm, not a melody. Four notes, three of them on the same pitch. <em>This album plays it as what it always was: a percussion figure.</em></h2>
+      <div class="body">
+        <p>The repertoire is the most familiar music in the Western canon. The four notes everyone can hum, the piece every piano student has played, the swans, the Turkish march. Amitai Kurtz finds the groove that was already inside each one and lets it move.</p>
+        <p>It started as a set of videos filmed in a backyard. They travelled across Brazil, the US, Japan and Europe, and the comment sections kept asking for the same thing in every language. The album is the answer, with a studio, an orchestra and horns recorded in Brazil.</p>
+      </div>
+      <div class="reach">
+        <div><b>Tens of millions</b><span>views across Instagram and TikTok</span></div>
+        <div><b>BR · US · JP · EU</b><span>where the audience lives</span></div>
+        <div><b>18.08.2026</b><span>album release date</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="album" id="album" aria-labelledby="album-h">
+  <div class="wrap">
+    <div class="album-head">
+      <div>
+        <span class="eyebrow">The programme</span>
+        <h2 id="album-h"><i>But He Was Born in</i><span>Brazil</span></h2>
+      </div>
+      <p>Eight tracks, seventeen minutes. Read it like a concert programme: the catalogue numbers are the composers', the rhythm section is Rio's.</p>
+    </div>
+
+    <div class="album-body">
+      <aside class="sleeve">
+        <div class="cover"><img src="/media/cover.jpg" alt="Album cover of But He Was Born in BRAZIL: three musicians in floral shirts behind a red keyboard, with the title in yellow and green" width="440" height="440"></div>
+        <dl class="meta">
+          <dt>Artist</dt><dd>Amitai Kurtz Samba Project</dd>
+          <dt>Released</dt><dd>18 August 2026</dd>
+          <dt>Format</dt><dd>8 tracks · 17 min</dd>
+          <dt>Genre</dt><dd>Samba · Bossa nova · Classical</dd>
+        </dl>
+        <nav class="listen" aria-label="Listen on">
+          <a class="primary" href="https://amitaikurtz.lnk.to/sambaproject" target="_blank" rel="noopener">All platforms <span>↗</span></a>
+          <a href="https://open.spotify.com/album/3o96IhWZuJyyPntioxAp6X" target="_blank" rel="noopener">Spotify <span>↗</span></a>
+          <a href="https://music.apple.com/album/6798279302" target="_blank" rel="noopener">Apple Music <span>↗</span></a>
+          <a href="https://music.youtube.com/playlist?list=OLAK5uy_m2_Q5kz683uDf6l28JPpNNQT5wWQYLWko" target="_blank" rel="noopener">YouTube Music <span>↗</span></a>
+          <a href="https://music.amazon.com/albums/B0HD197N1C" target="_blank" rel="noopener">Amazon Music <span>↗</span></a>
+          <a href="https://tidal.com/album/551134264" target="_blank" rel="noopener">Tidal <span>↗</span></a>
+          <a href="https://open.qobuz.com/album/sb9ixudcljaoi" target="_blank" rel="noopener">Qobuz <span>↗</span></a>
+        </nav>
+      </aside>
+
+      <div class="programme">
+        <div class="programme-title"><span>Programme</span><span>Composed 1783–1876 · Played 2026</span></div>
+        <ol>
+          <li>
+            <span class="no">1</span>
+            <div>
+              <div class="composer">Ludwig van Beethoven</div>
+              <div class="work"><em>Symphony No. 5</em><span class="lead"></span><span class="cat">Op. 67 · 1808</span></div>
+              <p class="note">Short, short, short, long. The most famous opening in symphonic music becomes the batucada it was waiting to be.</p>
+            </div>
+          </li>
+          <li>
+            <span class="no">2</span>
+            <div>
+              <div class="composer">Wolfgang Amadeus Mozart</div>
+              <div class="work"><em>Symphony No. 40</em><span class="lead"></span><span class="cat">K. 550 · 1788</span></div>
+              <p class="note">Mozart's restless G minor theme, carried by a samba pulse.</p>
+            </div>
+          </li>
+          <li>
+            <span class="no">3</span>
+            <div>
+              <div class="composer">Wolfgang Amadeus Mozart</div>
+              <div class="work"><em>Rondo Alla Turca</em><span class="lead"></span><span class="cat">K. 331 · 1783</span></div>
+              <p class="note">Mozart wrote it imitating a Turkish military band, percussion music from elsewhere heard through a Viennese ear. Playing it as samba makes the same move again, 240 years later.</p>
+            </div>
+          </li>
+          <li>
+            <span class="no">4</span>
+            <div>
+              <div class="composer">Ludwig van Beethoven</div>
+              <div class="work"><em>Für Elise</em><span class="lead"></span><span class="cat">WoO 59 · 1810</span></div>
+              <p class="note">The left hand becomes a bass line and the practice piece starts to dance.</p>
+            </div>
+          </li>
+          <li>
+            <span class="no">5</span>
+            <div>
+              <div class="composer">Pyotr Ilyich Tchaikovsky</div>
+              <div class="work"><em>Swan Lake</em><span class="lead"></span><span class="cat">Op. 20 · 1876</span></div>
+              <p class="note">Tchaikovsky's melancholy and Brazilian saudade turn out to be close relatives.</p>
+            </div>
+          </li>
+          <li class="interlude">
+            <span class="no">6</span>
+            <div>
+              <div class="composer">Frédéric Chopin</div>
+              <div class="work"><em>Nocturne No. 2 (Interlude)</em><span class="lead"></span><span class="cat">Op. 9 No. 2 · 1832</span></div>
+              <p class="note">A short doorway into the piece the whole project grew from.</p>
+            </div>
+          </li>
+          <li>
+            <span class="no">7</span>
+            <div>
+              <div class="composer">Frédéric Chopin</div>
+              <div class="work"><em>Nocturne No. 2</em><span class="lead"></span><span class="cat">Op. 9 No. 2 · 1832</span></div>
+              <p class="note">The first arrangement and the first video. Chopin's ornamented, rubato line sits naturally over bossa nova, it only needed a different accompaniment.</p>
+            </div>
+          </li>
+          <li class="interlude">
+            <span class="no">8</span>
+            <div>
+              <div class="composer">Wolfgang Amadeus Mozart</div>
+              <div class="work"><em>Rondo Alla Turca (Reprise)</em><span class="lead"></span><span class="cat">K. 331 · 1783</span></div>
+              <p class="note">The march returns to close the record.</p>
+            </div>
+          </li>
+        </ol>
+        <p class="credits"><strong>Arranged, produced and orchestrated by Amitai Kurtz.</strong> Recorded in the studio with an orchestra. Horn parts recorded in Brazil by players who work with some of the country's biggest artists, tracked there and sent to Israel.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sessions" id="sessions" aria-labelledby="sessions-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">Backyard sessions</span>
+        <h2 id="sessions-h">Where it <i>started</i></h2>
+      </div>
+      <p>One backyard, one red keyboard, a camera. These are the videos that sent the project around the world. Tap any of them to play with sound.</p>
+    </div>
+
+    <div class="mobile-feature">
+      <div class="clip" tabindex="0" role="button" aria-label="Play Mozart, backyard session">
+        <video preload="none" playsinline poster="/media/backyard-mozart.jpg" src="/media/backyard-mozart.mp4" style="aspect-ratio:16/9"></video>
+        <div class="cap"><div><b>Mozart</b><small>with the horn section</small></div><span class="play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span></div>
+      </div>
+    </div>
+    <div class="reels">
+      <div class="feature">
+        <div class="clip" tabindex="0" role="button" aria-label="Play Mozart, backyard session">
+          <video preload="none" playsinline poster="/media/backyard-mozart.jpg" src="/media/backyard-mozart.mp4"></video>
+          <div class="cap"><div><b>Mozart</b><small>with the horn section</small></div><span class="play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span></div>
+        </div>
+      </div>
+      <div class="clip" tabindex="0" role="button" aria-label="Play Chopin, backyard session">
+        <video preload="none" playsinline poster="/media/chopin.jpg" src="/media/chopin.mp4"></video>
+        <div class="cap"><div><b>Chopin</b><small>the first video</small></div><span class="play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span></div>
+      </div>
+      <div class="clip" tabindex="0" role="button" aria-label="Play Beethoven, backyard session">
+        <video preload="none" playsinline poster="/media/beethoven.jpg" src="/media/beethoven.mp4"></video>
+        <div class="cap"><div><b>Beethoven</b><small>backyard session</small></div><span class="play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span></div>
+      </div>
+      <div class="clip" tabindex="0" role="button" aria-label="Play Mozart, backyard session">
+        <video preload="none" playsinline poster="/media/mozart.jpg" src="/media/mozart.mp4"></video>
+        <div class="cap"><div><b>Mozart</b><small>backyard session</small></div><span class="play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span></div>
+      </div>
+      <div class="clip" tabindex="0" role="button" aria-label="Play Bach, backyard session">
+        <video preload="none" playsinline poster="/media/bach.jpg" src="/media/bach.mp4"></video>
+        <div class="cap"><div><b>Bach</b><small>backyard session</small></div><span class="play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span></div>
+      </div>
+      <div class="clip" tabindex="0" role="button" aria-label="Play Queen of the Night, backyard session">
+        <video preload="none" playsinline poster="/media/queen.jpg" src="/media/queen.mp4"></video>
+        <div class="cap"><div><b>Queen of the Night</b><small>but she was born in Brazil</small></div><span class="play"><svg viewBox="0 0 10 12"><path d="M0 0l10 6-10 6z"/></svg></span></div>
+      </div>
+    </div>
+
+    <div class="follow">
+      <span>New sessions land on</span>
+      <a class="btn btn-line" href="https://www.instagram.com/amitai_kurtz" target="_blank" rel="noopener">Instagram</a>
+      <a class="btn btn-line" href="https://www.tiktok.com/@amitaikurtz" target="_blank" rel="noopener">TikTok</a>
+      <a class="btn btn-line" href="https://www.youtube.com/@AKMusic188" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </div>
+</section>
+
+<section class="artist" id="amitai" aria-labelledby="amitai-h">
+  <div class="wrap grid">
+    <figure class="portrait">
+      <img src="/media/garden.jpg" alt="Amitai Kurtz at the red keyboard in the backyard where the sessions are filmed" width="1400" height="2100">
+      <figcaption>The backyard</figcaption>
+    </figure>
+    <div>
+      <span class="eyebrow">The arranger</span>
+      <h2 id="amitai-h">Amitai Kurtz <i>hears both traditions from the inside</i></h2>
+      <div class="bio">
+        <p><strong>Amitai Kurtz is an Israeli composer, arranger, producer and multi-instrumentalist.</strong> He studied music in Brazil, and the samba feel he brought home has run through everything he has played since.</p>
+        <p>He was working on a solo album when he started reimagining well-known pieces as samba, filmed with friends in a newly renovated backyard. The first one was a Chopin nocturne. Within weeks the videos were circulating worldwide, and the project took over.</p>
+        <p>He writes every arrangement down to the last percussion hit, which is how a run of videos turned into a full orchestral record in about two months.</p>
+      </div>
+      <div class="roles"><span>Arranger</span><span>Producer</span><span>Orchestrator</span><span>Keys</span><span>Guitar</span><span>Bass</span><span>Drums</span></div>
+      <p class="played"><b>On stage and in the studio with</b>Idan Raichel, Shlomi Shaban, Alon Oleartchik, Guy Mazig &amp; HaDorbanim, Jimbo J, Esther Rada</p>
+    </div>
+  </div>
+</section>
+
+<section class="live" id="live" aria-labelledby="live-h">
+  <div class="wrap grid">
+    <div>
+      <span class="eyebrow">Live</span>
+      <h2 id="live-h">Classical meets Carnaval<i>a concert that ends as a dance floor</i></h2>
+      <p class="intro">A high-energy show built from the album and the sessions: Mozart, Beethoven and Chopin next to film themes and pop and rock anthems, all reworked with samba and Latin rhythm. Available for festivals, venues, corporate evenings and private events, in Israel and abroad.</p>
+      <div class="facts">
+        <div><b>45–60</b><span>minute show</span></div>
+        <div><b>Full band</b><span>keys, rhythm section, horns</span></div>
+        <div><b>Worldwide</b><span>festivals, venues, events</span></div>
+      </div>
+      <p class="rep"><b>The set draws on</b>Mozart · Beethoven · Chopin · Bach · Tchaikovsky · film themes · Michael Jackson · The Beatles · Metallica</p>
+    </div>
+
+    <div class="book" id="booking">
+      <h3>Book the Samba Project</h3>
+      <p>Tell us about the event and we'll come back with availability and a proposal.</p>
+      <form id="bookForm" novalidate>
+        <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="f-type">Event type</label>
+          <select id="f-type" name="type">
+            <option>Festival</option><option>Venue / concert</option><option>Corporate event</option><option>Private event / wedding</option><option>Press</option><option>Other</option>
+          </select></div>
+        <div class="field"><label for="f-date">Date &amp; city</label><input id="f-date" name="date" placeholder="e.g. 12.03.2027, Lisbon"></div>
+        <div class="field full"><label for="f-msg">Details</label><textarea id="f-msg" name="message" placeholder="Audience size, venue, set length, budget range"></textarea></div>
+        <div class="send"><button class="btn btn-ink" type="submit">Send booking request</button><span class="status" id="status" role="status" aria-live="polite"></span></div>
+      </form>
+      <div class="direct"><span>Or write directly</span><a id="mail" href="mailto:info@sambakurtz.com">info@sambakurtz.com</a><button class="copy" id="copy" type="button">Copy</button></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="Back to top"><span class="beat" aria-hidden="true"><i></i><i></i><i></i><i></i></span><b>Amitai Kurtz <span>Samba Project</span></b></a>
+    <nav aria-label="Social">
+      <a href="https://amitaikurtz.lnk.to/sambaproject" target="_blank" rel="noopener">Listen</a>
+      <a href="https://www.instagram.com/amitai_kurtz" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@amitaikurtz" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://www.youtube.com/@AKMusic188" target="_blank" rel="noopener">YouTube</a>
+      <a href="#booking">Booking</a>
+    </nav>
+    <small>© 2026 Amitai Kurtz</small>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement; root.classList.add('js');
+  requestAnimationFrame(function(){requestAnimationFrame(function(){root.classList.add('load')})});
+
+  var nav=document.getElementById('nav');
+  function onScroll(){nav.classList.toggle('scrolled',window.scrollY>40)}
+  onScroll(); window.addEventListener('scroll',onScroll,{passive:true});
+
+  var hv=document.getElementById('heroVideo');
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){hv.removeAttribute('autoplay');hv.pause()}
+  else{var p=hv.play(); if(p&&p.catch)p.catch(function(){})}
+
+  var clips=[].slice.call(document.querySelectorAll('.clip'));
+  function stopAll(except){clips.forEach(function(c){if(c!==except){var v=c.querySelector('video');if(!v.paused)v.pause();c.classList.remove('playing')}})}
+  clips.forEach(function(c){
+    var v=c.querySelector('video');
+    function toggle(){
+      if(v.paused){stopAll(c);v.muted=false;var p=v.play();if(p&&p.catch)p.catch(function(){});c.classList.add('playing')}
+      else{v.pause();c.classList.remove('playing')}
+    }
+    c.addEventListener('click',toggle);
+    c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle()}});
+    v.addEventListener('ended',function(){c.classList.remove('playing');v.load()});
+  });
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting){var v=e.target.querySelector('video');if(!v.paused){v.pause();e.target.classList.remove('playing')}}})},{threshold:.15});
+    clips.forEach(function(c){io.observe(c)});
+  }
+
+  var EMAIL='info@sambakurtz.com';
+  var form=document.getElementById('bookForm'), status=document.getElementById('status');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var f=form.elements;
+    if(!f.name.value.trim()||!/^\S+@\S+\.\S+$/.test(f.email.value.trim())){status.textContent='Add your name and a valid email so we can reply.';(f.name.value.trim()?f.email:f.name).focus();return}
+    var subject='Booking request: '+f.type.value+(f.date.value?' · '+f.date.value:'');
+    var body='Name: '+f.name.value+'\nEmail: '+f.email.value+'\nEvent type: '+f.type.value+'\nDate & city: '+f.date.value+'\n\n'+f.message.value;
+    window.location.href='mailto:'+EMAIL+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+    status.textContent='Your email app should open with the request filled in. If it doesn’t, write to '+EMAIL+'.';
+  });
+  document.getElementById('copy').addEventListener('click',function(){
+    var b=this;
+    function done(){b.textContent='Copied';setTimeout(function(){b.textContent='Copy'},1800)}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(EMAIL).then(done,function(){sel()})}else sel();
+    function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('mail'));var s=getSelection();s.removeAllRanges();s.addRange(r)}
+  });
+})();
+</script>
+</body>
+</html>
